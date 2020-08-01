@@ -5,8 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-        <h1>HOLA QUE TAL</h1>
-        <h3>{{ form.as_table }}</h3>
-    <inpyt type="submit">Crear</input>
+    <h1>Ingresar Producto</h1>
+
+    <form action="." method="POST">{% csrf_token %}
+        <table>{{ form.as_table }}</table>
+        <input type="submit"></input>
+    </form>
+
+
 </body>
 </html>

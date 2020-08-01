@@ -20,7 +20,7 @@ from Producto.views import crear_formulario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('productos/', crear_formulario, name='Crear_Producto')
+    path('productos/', crear_formulario, name='CrearProducto')
 ]
 
 # TODO agregar el path a la pagina que quiera agregar en el servidor cuando tenga alguna.
