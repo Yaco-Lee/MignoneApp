@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Producto.views import crear_formulario
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('productos/', crear_formulario, name='Crear_Producto')
 ]
+
+# TODO agregar el path a la pagina que quiera agregar en el servidor cuando tenga alguna.
