@@ -14,14 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Producto.views import crear_formulario, listar_productos
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', listar_productos, name='ListarProductos'),
     path('productos/', crear_formulario, name='CrearProducto'),
-    path('', listar_productos, name='ListarProductos')
+    path('marcas/', include('Marca.urls'))
 ]
 
 # TODO agregar el path a la pagina que quiera agregar en el servidor cuando tenga alguna.
