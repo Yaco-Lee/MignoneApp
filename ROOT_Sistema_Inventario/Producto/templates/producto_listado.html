@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1> Productos </h1>
+
+<table id="productos_listado">
+    <tr>
+        <th>Codigo de Barra</th>
+        <th>Descripcion</th>
+        <th>Marca</th>
+        <th>Categoria</th>
+        <th>Precio</th>
+        <th>Fecha de Vencimiento</th>
+        <th>Ubicacion</th>
+        <th>Proveedor</th>
+        <th>Observaciones</th>
+    </tr>
+
+    {% for producto in productos %}
+
+    <tr onclick="goToDetalleProducto()" class="producto_item">
+        <td>{{ producto.cod_de_barra }}</td>
+        <td>{{ producto.descripcion }}</td>
+        <td>{{ producto.marca }}</td>
+        <td>{{ producto.categoria }}</td>
+        <td>{{ producto.precio }}</td>
+        <td>{{ producto.fecha_vencimiento }}</td>
+        <td>{{ producto.ubicacion }}</td>
+        <td>{{ producto.proveedor }}</td>
+        <td>{{ producto.observaciones }}</td>
+    </tr>
+    
+    {% endfor %}
+</table>
+
+{% endblock body %}
+
+{% block scripts %}
+    function goToDetalleProducto() {
+        window.location = "http://localhost:8000/productos";
+    }        
+    
+{% endblock scripts %}
