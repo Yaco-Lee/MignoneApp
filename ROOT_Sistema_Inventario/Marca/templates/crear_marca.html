@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <h1>Nueva Marca</h1>
+
+    <form action="." method='POST'>{% csrf_token %}
+        <table>
+        {{ form.as_table}}
+        </table>
+
+        <input type="submit" />
+
+        {{ form.errors}}
+    </form>
+
+{% endblock body %}
